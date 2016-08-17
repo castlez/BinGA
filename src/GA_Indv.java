@@ -39,4 +39,7 @@ public class GA_Indv {
         return geneout;
     }
 
+    public byte[] getGenes() {
+        return genes;
+    }
 }

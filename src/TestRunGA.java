@@ -1,10 +1,23 @@
+import java.io.ByteArrayInputStream;
+
 /**
  * Created by Jonny on 8/16/2016.
  */
+
+import java.lang.reflect.Array;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+
 public class TestRunGA {
     public static void main(String[]args){
         // Set a candidate solution
-        FitCalc.setSolution("1111000000100000000000100000000000000100000000100000100000001111");
+        System.out.println(args[0].toString());
+        int solutionnumber = args.length > 0 ? Integer.parseInt(args[0].toString()) : 42;
+        String solnbitstring = Integer.toBinaryString(solutionnumber);
+        String leadingZeros = "";
+        for (int i = 0; i<(64-solnbitstring.length()); i++) {leadingZeros += "0";}
+        FitCalc.setSolution( leadingZeros + solnbitstring);
 
         // Create an initial population
         GA_Pop myPop = new GA_Pop(50, true);
