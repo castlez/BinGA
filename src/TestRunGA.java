@@ -12,8 +12,8 @@ import java.util.IntSummaryStatistics;
 public class TestRunGA {
     public static void main(String[]args){
         // Set a candidate solution
-        System.out.println(args[0].toString());
-        int solutionnumber = args.length > 0 ? Integer.parseInt(args[0].toString()) : 42;
+        int solutionnumber = args != null && args.length>0 ? Integer.parseInt(args[0].toString()) : 42;
+        System.out.println("number to guess is " + solutionnumber);
         String solnbitstring = Integer.toBinaryString(solutionnumber);
         String leadingZeros = "";
         for (int i = 0; i<(64-solnbitstring.length()); i++) {leadingZeros += "0";}
