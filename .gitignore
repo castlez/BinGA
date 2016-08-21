@@ -1,2 +1,7 @@
 out/
 .idea/
+src/FitCalc.class
+src/GA_Alg.class
+src/GA_Indv.class
+src/GA_Pop.class
+src/TestRunGA.class
